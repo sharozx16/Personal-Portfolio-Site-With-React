@@ -1,3 +1,13 @@
+:root{
+  --primary-white: #fff;
+  --primary-purple: #5404c4;
+  --primary-dark: rgb(255,255,255,0);
+}
+
+body {
+  font-family:  'Poppins', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +45,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+/************* NAVBAR ***********/
+.logo{
+  width: 4.25rem;
+}
+
+nav a.nav-link{
+  letter-spacing: 0.0375rem;
+  cursor: pointer;
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  margin-right: 0.75rem;
+  margin-left:0.75rem;
+  color: var(--primary-white)  !important;
+  border-top: 0.1875rem solid var(--primary-dark);
+
+}
+
+.navbar-brand {
+  max-width: 17.25rem;
+  padding: 0 !important;
+
+}
+
+.navbar-nav > li > a.active, .navbar-nav > li > a:hover {
+  border-top: 0.1875rem solid var(--primary-purple);
 }
