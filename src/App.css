@@ -1,51 +1,47 @@
+
 :root{
   --primary-white: #ffffff;
   --primary-purple: #3a0486;
   --primary-dark: rgb(255,255,255,0);
+
 }
+
 
 body {
-  font-family:  'Poppins', sans-serif;
+  font-family:  Poppins  !important;
+  
 }
 
-.App {
-  text-align: center;
+h1{
+  
+  font-weight:  800 !important;
+  font-size: 70px !important;
+  line-height: 60px !important;
+  font-style: normal;
+  
+  margin: 22
+  px
+   0 20
+  px
+  ;
 }
+p{
+  font-weight: 300 !important;
+  
+}
+h3{
+  font-weight: 650 !important;
+}
+h4{
+  font-size:15px !important;
+  font-weight: 500;
+}
+html {
+  scroll-behavior: smooth;
+ }
+ 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /************* NAVBAR ***********/
 .logo{
   width: 4.25rem;
@@ -110,10 +106,14 @@ nav ul li {
   font-family:  'Poppins', sans-serif;
    z-index:1;
 }
+.main-info h4{
+  font-size: 40px !important;
+}
 .main-info h1{
-  font-weight: 500px;
+ 
   line-height: 36pt;
 }
+
 
 .typed-text{
   font-weight: 500px;
@@ -121,31 +121,61 @@ nav ul li {
   color: #fff;
   font-size: 40px;
 }
-@media(max-width: 768px){
-  .main-info h1{
-    font-size:1.7rem !important;
-  }
-  .typed-text{
-    font-size:1.5rem !important;
-  }
-}
 .btn-main{
-  border: 2px solid var(--primary-purple);
+  border: 2px solid var(--primary-white);
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: .3rem;;
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
-  color: var(--primary-purple);
+  color: var(--primary-white);
   margin: 2rem;
   text-decoration: none;
+  font-size: 1.5rem;
   
 }
 
 .btn-main:hover{
   text-decoration: none;
-  background-color: var(--primary-purple);
-  color: var(--primary-white);
+  background-color: var(--primary-white);
+  color: var(--primary-purple);
   transition: 0.2s ease-in-out;
 }
+@media (max-width:500px) {
+  .main-info h4{
+    font-size: 1rem !important;
+    margin: 0px;
+    padding: 0;
+  }
+  .main-info h1{
+    font-size:3rem !important;
+    margin: 0px;
+   padding: 0 80px !important;
+  }
+  
+  .typed-text{
+    font-size:1rem !important;
+    margin: 0px;
+  }
+  .btn-main{
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (min-width:500px) and (max-width:1200px){
+  .main-info h4{
+    font-size: 1.5rem !important;
+  }
+  .main-info h1{
+    font-size:3.5rem !important;
+  }
+  
+  .typed-text{
+    font-size:1.5rem !important;
+  }
+  .btn-main{
+    font-size: 0.8rem !important;
+  }
+}
+
 .tsparticles-canvas-el{
   position: absolute;
   height: 100vh;
@@ -231,7 +261,22 @@ textarea.form-control{
   margin: -0.3rem 0; 
 
 }
-@media(max-width: 768px) {
+.btn-contact{
+  border: 2px solid var(--primary-white);
+  text-transform: uppercase;
+  border-radius: .3rem;;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: var(--primary-white);
+  background-color: var(--primary-purple);
+  margin: 2rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.btn-contact:hover{
+  background-color: var(--primary-white);
+  color: var(--primary-purple);
+}
+@media(max-width: 1500px) {
   .contacts{
     overflow-x: hidden;
   }
@@ -242,19 +287,24 @@ textarea.form-control{
   .contacts p {
     padding: 0 0.4rem;
   }
+  .btn-contact{
+    font-size: 20px !important;
+  }
 }
 #portfolio{
   height: 100vh;
-  margin-top: 100px;
-  background-color:var(--primary-white);
+  margin: 30px 0;
+  background-color:rgb(245, 245, 245);;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 #portfolio h1 {
   font-size: 50px;
+  margin-top: 60px;
 }
 
 
@@ -268,10 +318,12 @@ textarea.form-control{
   border: solid 1px black;
   border-radius: 85px;
 }
-
+#portfolio .tabs{
+  margin: 20px 0;
+}
 .portfolioList  {
   list-style: none;
-  font-size:13px !important;
+  
   margin-right: 0px;
   padding: 7px 40px;
  display: flex;
@@ -281,18 +333,16 @@ textarea.form-control{
 
 }
 
- li:active {
-  background: var(--primary-purple) !important;
-  color: var(--primary-white) !important;
-}
 .act{
   background: var(--primary-purple) !important;
   color: var(--primary-white) !important;
+ transition: ease-in 0.3s;
 }
 
 
 #portfolio .container{
-  width: 60%;
+  width: 80%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -333,16 +383,47 @@ textarea.form-control{
   opacity: 0.10;
 }
 
-@media (max-width: 600px){
-  #portfolio h1{
-    font-size: 30px;
+@media(max-width:380px){
+  #portfolio{
+    height: 100%;
   }
 
   #portfolio ul {
     margin: 10 0;
-    flex-wrap: wrap;
+    flex-direction: column  !important;
     justify-content: center;
     border: none;
+    align-items: center;
+  }
+
+  #portfolio .container{
+    width: 100%;
+  }
+  #portfolio .container .item {
+    width: 120px;
+    height: 100px;
+  }
+
+  .portfolioList{
+    margin-right: 20px;
+  }
+
+  .pimages{
+    width: 120px !important;
+    height: 100px !important;
+  }
+}
+@media (min-width:380px) and (max-width: 500px){
+  #portfolio{
+    height: 100%;
+  }
+
+  #portfolio ul {
+    margin: 10 0;
+    flex-direction: column  !important;
+    justify-content: center;
+    border: none;
+    align-items: center;
   }
 
   #portfolio .container{
@@ -362,9 +443,46 @@ textarea.form-control{
     height: 100px !important;
   }
 }
+@media (min-width:500px) and (max-width: 1500px){
+  #portfolio{
+    height: 100%;
+  }
+  #portfolio h1{
+    margin-top: 50px;
+  }
+  #portfolio ul {
+    margin: 10 0;
+    flex-direction: column  !important;
+    justify-content: center;
+    border: none;
+    align-items: center;
+    font-size: 1.3rem;
+  }
 
+  #portfolio .container{
+    width: 100%;
+  }
+  
+  #portfolio .container .item {
+    width: 150px;
+    height: 100px;
+  }
+
+  .portfolioList{
+    margin-right: 20px;
+  }
+
+  .pimages{
+    width: 150px !important;
+    height: 100px !important;
+  }
+
+.projects{
+  margin-bottom: 30px;
+}
+}
 .about{
-  height: 100vh;
+  height: 120vh;
   margin-top: 75px;
 }
 
@@ -377,7 +495,7 @@ text-align: center;
 .myworks{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 50px;
 }
 
@@ -390,8 +508,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-.first p{
-padding-top: 20px;
+.first h4{
+padding-top: 10px;
 }
 .logo{
   display: block;
@@ -434,26 +552,8 @@ padding-top: 20px;
   background-image: url(./logos/firebase.png);
 }
 
-@media (max-width:600px) {
- .about h1{
-   font-size: 30px;
- }
-
-  .myworks{
-   flex-wrap: wrap;
- }
-
- .about .container{
-  width: 100%;
-}
- .logo{
-  height: 50px;
-  width: 50px;
- }
-}
-
 .aboutme{
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -463,4 +563,172 @@ padding-top: 20px;
 
 .aboutme p{
  font-size: 20px;
+text-align: center;}
+
+.socialmedia{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-around;
+margin: 40px 400px;
+}
+
+.socialicon{
+ height: 60px;
+ width: 60px;
+ background-color: rgba(0, 0, 0, 0.54);;
+ display: inline-flex;
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ box-sizing: border-box;
+ padding: 12px;
+ vertical-align: middle;
+ margin: 0px;
+ -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.socialicon:hover{
+  background-color: var(--primary-purple);
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+   
+}
+
+.btn-outline-primary{
+  color: var(--primary-purple) !important;
+  border-color: var(--primary-purple) !important;
+}
+
+.btn-outline-primary:hover{
+  background-color: var(--primary-purple) !important;
+  color: var(--primary-white) !important;
+  transition:  ease-in-out 0.5s !important;
+
+}
+
+@media (max-width: 600px) {
+  .about{
+    height: 100%;
+  }
+  .about h1{
+    font-size: 30px;
+  }
+ 
+   .myworks{
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+ 
+   .container{
+   width: 100%;
+ }
+  .logo{
+   height: 50px;
+   width: 50px;
+  }
+  .first h4{
+    font-size: 10.9px !important;
+    text-align: center;
+    font-weight: 495;
+  }
+  .aboutme{
+    margin: 0px;
+    display: unset;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: unset;
+    padding: 5px 20px;
+  }
+  .aboutme p{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    text-align: unset;
+
+  }
+  .socialmedia{
+    margin: 0;
+  }
+  .socialicon{
+    height: 50px !important;
+    width: 50px !important;
+  
+  }
+   .fa-3x{
+   font-size: 2em !important;
+
+  }
+  .socialmedia button{
+    margin-top: 35px;
+    font-size: 15px  !important;
+  }
+  .btn .btn-lg{
+    width: 100px;
+  }
+}
+@media (min-width:600px) and (max-width:1200px){
+  .about{
+    height: 100%;
+    margin-top: 135px;
+  }
+  .about h1{
+margin-bottom: 25px;
+  }
+  .about .container{
+    width: 100%;
+  }
+   .myworks{
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+ 
+
+  .logo{
+   height: 80px;
+   width: 80px;
+  }
+  .first h4{
+    text-align: center;
+  }
+  .aboutme{
+    margin: 0px;
+    display: unset;
+    flex-direction: row;
+    align-items: unset;
+    justify-content: unset;
+    padding: 5px 20px;
+  }
+ 
+  .aboutme p{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    text-align: unset;
+
+  }
+  .socialmedia{
+    margin: 0;
+  }
+  .socialicon{
+    height: 80px !important;
+    width: 80px !important;
+  
+  }
+   .fa-3x{
+   font-size: 3em !important;
+
+  }
+  .socialmedia button{
+    margin: 35px 0;
+    font-size: 25px  !important;
+  }
+  .btn .btn-lg{
+    width: 100px;
+    
+  }
 }

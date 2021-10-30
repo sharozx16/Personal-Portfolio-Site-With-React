@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 const Contacts = () => {
+    useEffect(() => {
+        Aos.init({duration: 1200});
+    }, []);
     return (
-        <div className="contacts">
+        <div className="contacts" id="contact">
             <div className="text-upper">
-            <h1>Contact Me</h1>
-            <p> Fill out the form to get in contact.</p>
+            <h1 data-aos="fade-down" data-aos-easing="ease-out-back"  data-aos-anchor-placement="bottom-bottom">Contact Me</h1>
+            <p data-aos="slide-right" data-aos-easing="ease-out-back"  data-aos-anchor-placement="center-bottom"> Fill out the form to get in contact.</p>
             </div>
-            <div className="container">
+            <div data-aos="zoom-in" data-aos-easing="ease-out-back"  data-aos-anchor-placement="center-bottom" className="container">
                 <div className="row">
                   <div className="col-md-6 col-xs-12">
                      <div className="text-center">             
@@ -49,15 +54,10 @@ const Contacts = () => {
                       </div>  
                       <div className="col-md-6 col-xs-12">
                       <div className="text-center">
-                      <textarea
-                      type="text"
-                      className="form-control"
-                      placeholder="Email"
-                      description="description"
-                      > </textarea>
+                      <textarea type="text" className="form-control" placeholder="Description" description="description"></textarea>
                        <div className="line"></div>
                        </div>
-                      <button className="btn-main btn-contact">Contact Me</button>
+                      <button className="btn-contact">Contact Me</button>
                       </div>
                 </div>
             </div>

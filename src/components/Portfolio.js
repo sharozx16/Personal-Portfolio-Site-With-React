@@ -6,9 +6,14 @@ import { featuredPortfolio,
         designPortfolio,
         contentPortfolio
 } from '../Data';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 
 const Portfolio = () => {
+    useEffect(() => {
+        Aos.init({duration: 1200});
+    }, []);
     const [selected, setSelected] = useState("featured");
     const [data, setData] = useState([]);
     const list = [
@@ -56,17 +61,19 @@ const Portfolio = () => {
       }
     }, [selected])
     return (
-        <div className="portfolio" id="portfolio">
-            <h1 >Portfolio</h1>
+        <div  className="portfolio" id="portfolio">
+            <h1 data-aos="fade-down" data-aos-easing="ease-out-back"  data-aos-anchor-placement="bottom-bottom" >Portfolio</h1>
+            <div data-aos="zoom-out" data-aos-easing="ease-out-back"  data-aos-anchor-placement="bottom-bottom" className="tabs">
             <ul>
                {list.map((item) =>(
                    <PortfolioList title={item.title} active={selected === item.id} setSelected={setSelected} id={item.id}/>
                ))}
            </ul>
-            <div className="container">
+           </div>
+            <div  data-aos="slide-up" data-aos-easing="ease-in-out" className="container projects">
                 {data.map(d => (
                     <div className="item">
-                    <img src={d.img} alt="" style={{width:"220px",height:"150px"}} className="pimages"/>
+                    <img src={d.img} alt="" style={{width:"330px",height:"250px"}} className="pimages"/>
                     <h3>{d.title}</h3>
                    
                 </div>

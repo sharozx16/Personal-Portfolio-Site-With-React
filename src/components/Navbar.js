@@ -1,11 +1,22 @@
-import React from "react";
-import logo from "../logo.png";
+import React,{ useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () =>{
+    if (window.scrollY >= 650) {
+      setNavbar(true);
+    }
+    else{
+      setNavbar(false);
+    }
+  }
+ 
+  window.addEventListener('scroll',changeBackground);
     return (
-        <nav className="navbar navbar-expand-lg fixed-top navbar-transparent">
+        <nav className={navbar ?  "navbar act navbar-expand-lg fixed-top navbar-transparent" :  "navbar navbar-expand-lg fixed-top navbar-transparent"}>
         <div className="container">
         <a className="navbar-brand" href="#">  </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,14 +29,14 @@ const Navbar = () => {
               <a className="nav-link" href="#">Home </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">About Me</a>
+              <a className="nav-link" href="#about">About</a>
             </li>
            
             <li className="nav-item">
-              <a className="nav-link" href="#">Portfolio</a>
+              <a className="nav-link" href="#portfolio">Portfolio</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact Me</a>
+              <a className="nav-link" href="#contact">Contact Me</a>
             </li>      
           </ul>
        
